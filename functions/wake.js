@@ -64,7 +64,8 @@ function wake(mac, options, callback){
 
 exports.handler = async (event, context) => {
     const data = JSON.parse(event.body);
-
+    console.log(data);
+    wake(data.macAddress);
     axios({
         method: 'post',
         url: 'http://requestbin.net/r/1ax4yog1',
