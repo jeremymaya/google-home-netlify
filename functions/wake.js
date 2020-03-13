@@ -4,6 +4,8 @@ const wol = require('wol')
 exports.handler = function(event, context, callback) {
     const data = JSON.parse(event.body)
 
+    console.log(data)
+
     axios({
         method: 'post',
         url: 'http://requestbin.net/r/19wesms1',
