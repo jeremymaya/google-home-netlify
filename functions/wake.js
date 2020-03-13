@@ -37,7 +37,7 @@ function wake(mac, options, callback){
   }
   const { address, port } = Object.assign({
     address : '192.168.1.255',
-    port    : 9
+    port    : 7
   }, options);
   // create magic packet
   var magicPacket = createMagicPacket(mac);
@@ -62,10 +62,9 @@ function wake(mac, options, callback){
   });
 };
 
-exports.handler = async (event, context) => {
+exports.handler = function(event, context, callback) {
     const data = JSON.parse(event.body);
-    console.log(data);
-    wake(data.macAddress);
+
     axios({
         method: 'post',
         url: 'http://requestbin.net/r/1ax4yog1',
@@ -73,10 +72,10 @@ exports.handler = async (event, context) => {
     }).then(response => {
         console.log(response.config.data)
         wake(response.config.data)
-        return {
+        callback(null, {
             statusCode: 200,
             body: 'Success'
-        }
+        });
     }).catch(err =>{
         console.log(err)
         callback(new Error('Failed'))
