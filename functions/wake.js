@@ -1,22 +1,21 @@
-const wol = require('wol');
+const axios = require('axios')
+const wol = require('wol')
 
 exports.handler = function(event, context, callback) {
-    if (event.httpMethod !== "POST") {
-        callback(new Error("Invalid HTTP request"));
-        return;
-    }
+    const data = JSON.parse(event.body)
 
-    const data = JSON.parse(event.body);
-
-    if (!data.macAddress) {
-        callback(new Error("MAC address missing"));
-        return;
-    }
-
-    wol.wake(data.macAddress);
-
-    callback(null, {
-        statusCode: 200,
-        body: "Success"
-    });
+    axios({
+        method: 'post',
+        url: 'http://requestbin.net/r/19wesms1',
+        data: data.macAddress
+    }).then(response => {
+        wol.wake(response.config.data)
+        callback(null, {
+            statusCode: 200,
+            body: 'Success'
+        })
+    }).catch(err =>{
+        console.log(err)
+        callback(new Error('Failed'))
+    })
 }
