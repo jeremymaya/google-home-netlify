@@ -62,7 +62,7 @@ function wake(mac, options, callback){
   });
 };
 
-exports.handler = function(event, context, callback) {
+exports.handler = async (event, context) => {
     const data = JSON.parse(event.body);
 
     axios({
@@ -72,10 +72,10 @@ exports.handler = function(event, context, callback) {
     }).then(response => {
         console.log(response.config.data)
         wake(response.config.data)
-        callback(null, {
+        return {
             statusCode: 200,
             body: 'Success'
-        });
+        }
     }).catch(err =>{
         console.log(err)
         callback(new Error('Failed'))
