@@ -5,9 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
-    "net": "^1.0.2",
     "netlify-lambda": "^1.6.3",
-    "udp": "^1.0.0",
     "wol": "^1.0.7"
   },
   "devDependencies": {},
