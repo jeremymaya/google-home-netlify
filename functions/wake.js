@@ -72,10 +72,7 @@ exports.handler = function(event, context, callback) {
         url: 'http://requestbin.net/r/19wesms1',
         data: data.macAddress
     }).then(response => {
-        console.log(response.config.data, function(err, res){
-            console.log(res)
-        })
-        wol.wake(response.config.data)
+        wake(response.config.data)
         callback(null, {
             statusCode: 200,
             body: 'Success'
