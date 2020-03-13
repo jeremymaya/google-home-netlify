@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "netlify-lambda": "^1.6.3",
-    "wol": "^1.0.7"
+    "wake_on_lan": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
