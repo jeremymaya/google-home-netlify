@@ -1,5 +1,5 @@
 const axios = require('axios');
-const wol = require('wakeup');
+const wol = require('wakeonlan');
 
 exports.handler = function(event, context, callback) {
     const data = JSON.parse(event.body);
