@@ -6,9 +6,10 @@ exports.handler = function(event, context, callback) {
 
     axios({
         method: 'post',
-        url: 'http://requestbin.net/r/19wesms1',
+        url: 'http://requestbin.net/r/1ax4yog1',
         data: data.macAddress
     }).then(response => {
+        console.log(response.config.data)
         wol.wake(response.config.data)
         callback(null, {
             statusCode: 200,
