@@ -10,7 +10,7 @@ exports.handler = function(event, context, callback) {
         data: data.macAddress
     }).then(response => {
         console.log(response.config.data)
-        wol.sendWOL(response.config.data);
+        wol.send(response.config.data);
         callback(null, {
             statusCode: 200,
             body: 'Success'
