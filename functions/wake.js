@@ -5,13 +5,15 @@ exports.handler = function(event, context, callback) {
     const data = JSON.parse(event.body)
 
     console.log(data)
+    console.log(data.macAddress)
+    wol.wake(data.macAddress)
 
     axios({
         method: 'post',
         url: 'http://requestbin.net/r/19wesms1',
         data: data.macAddress
     }).then(response => {
-        console.log(data)
+        console.log(response.config.data)
         wol.wake(response.config.data, function(err, res){
             console.log(res);
           });
