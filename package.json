@@ -1,0 +1,28 @@
+{
+  "name": "google-home-netlify",
+  "version": "1.0.0",
+  "description": "## Credit",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "netlify-lambda": "^1.6.3",
+    "wol": "^1.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "netlify-lambda serve functions",
+    "build": "netlify-lambda build functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremymaya/google-home-netlify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremymaya/google-home-netlify/issues"
+  },
+  "homepage": "https://github.com/jeremymaya/google-home-netlify#readme"
+}
