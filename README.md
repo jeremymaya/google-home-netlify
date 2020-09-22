@@ -1,8 +1,12 @@
 # Turning On/Off Computer with Google Assistant
 
+Author: Kyungrae Kim
+
+----
+
 This is a personal project that uses [If This Then That](https://ifttt.com/) to create applets that turn on and off computer with Google Assistant.
 
-This project is still work in progress.
+----
 
 ## Turning Off Computer
 
@@ -10,9 +14,11 @@ Status: Complete
 
 Follow [these](https://github.com/MaxAnderson95/Shutdown-PC-via-IFTTT) directions to enable turn off a computer with Google Assistant.
 
+----
+
 ## Turning On Computer
 
-Status: In Progress
+Status: Checkout the completed project using Flask [here](https://github.com/jeremymaya/raspberry-pi-os/tree/master/flask_app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/faaf2e0f-145d-4f6b-8f2a-a4a8a5d5303b/deploy-status)](https://app.netlify.com/sites/stoic-goldstine-9c5a07/deploys)
 
@@ -34,7 +40,9 @@ POST endpoint accepts the following JSON object
 
 The current setup broadcasts the magic packet in the wrong network since the server is located in a remote location. I am looking into using the GET method to trigger WOL from the local network.
 
-## Credit
+----
+
+## Credits
 
 * [Shutdown PC via IFTTT](https://github.com/MaxAnderson95/Shutdown-PC-via-IFTTT)
 * [Netlify Documentation - Functions](https://docs.netlify.com/functions/build-with-javascript/)
